@@ -1,9 +1,14 @@
 import React from 'react';
 import { FiAlertCircle, FiXCircle } from 'react-icons/fi';
 
+import { ToastMessage } from '../../hooks/toast';
 import { Container, Toast } from './styles';
 
-const ToastContainer: React.FC = () => {
+interface ToastContainerProps {
+  messages: ToastMessage[];
+}
+
+const ToastContainer: React.FC<ToastContainerProps> = ({ messages }) => {
   return (
     <Container>
       <Toast hasDescription>
